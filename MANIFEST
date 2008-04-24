@@ -1,0 +1,23 @@
+Build.PL
+Changes
+lib/Search/Google.pm
+lib/Search/Google/Blogs.pm
+lib/Search/Google/Books.pm
+lib/Search/Google/Images.pm
+lib/Search/Google/Local.pm
+lib/Search/Google/News.pm
+lib/Search/Google/Video.pm
+lib/Search/Google/Web.pm
+MANIFEST			This list of files
+README
+t/01_basic.t
+t/02_web.t
+t/03_local.t
+t/04_video.t
+t/05_blogs.t
+t/06_news.t
+t/07_books.t
+t/08_images.t
+t/09_pod.t
+Makefile.PL
+META.yml

@@ -1,0 +1,50 @@
+---
+name: Search-Google
+version: 1.0.0
+author:
+  - 'Eugen Sobchenko <ejs@cpan.org>'
+abstract: Perl OO interface to the Google REST API for searching
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  JSON::Any: 1.16
+  LWP::UserAgent: 2.033
+  Scalar::Util: 1.14
+  Test::More: 0.47
+  URI: 1.35
+  perl: 5.6.1
+  version: 0.50
+provides:
+  Search::Google:
+    file: lib/Search/Google.pm
+    version: 1.0.0
+  Search::Google::Blogs:
+    file: lib/Search/Google/Blogs.pm
+    version: 1.0.0
+  Search::Google::Books:
+    file: lib/Search/Google/Books.pm
+    version: 1.0.0
+  Search::Google::Cursor:
+    file: lib/Search/Google.pm
+  Search::Google::Data:
+    file: lib/Search/Google.pm
+  Search::Google::Images:
+    file: lib/Search/Google/Images.pm
+    version: 1.0.0
+  Search::Google::Local:
+    file: lib/Search/Google/Local.pm
+    version: 1.0.0
+  Search::Google::News:
+    file: lib/Search/Google/News.pm
+    version: 1.0.0
+  Search::Google::Video:
+    file: lib/Search/Google/Video.pm
+    version: 1.0.0
+  Search::Google::Web:
+    file: lib/Search/Google/Web.pm
+    version: 1.0.0
+generated_by: Module::Build version 0.2808
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
