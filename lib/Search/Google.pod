@@ -1,0 +1,111 @@
+=head1 NAME
+
+Search::Google - search Google using the REST (aka AJAX) API
+
+=head1 VERSION
+
+This documentation refers to Search::Google version 1.0.1
+
+=head1 SYNOPSIS
+
+	use Search::Google::Web;
+
+	# you should provide a valid http referer address according
+	# to Google AJAX Search API terms of use!
+	Search::Google::Web->http_referer('http://example.com');
+
+	my $res = Search::Google::Web->new(
+		q => 'Larry Wall',
+	);
+
+	die "response status failure" if $res->responseStatus != 200;
+
+	my $data = $res->responseData;
+
+	my $cursor = $data->cursor;
+
+	printf "pages: %s\n", $cursor->pages;
+	printf "current page index: %s\n", $cursor->currentPageIndex;
+	printf "estimated result count: %s\n", $cursor->estimatedResultCount;
+
+	my @results = $data->results;
+
+	foreach my $r (@results) {
+		printf "\n";
+		printf "title: %s\n", $r->title;
+		printf "url: %s\n", $r->url;
+	}
+
+=head1 DESCRIPTION
+
+C<Search::Google> is a set of classes that use Google REST (aka AJAX)
+API for searching and provide OO interface to Google's response objects.
+
+	TODO
+
+=head1 METHODS
+
+=over
+
+=item new
+
+	Constructor arguments are same as URL arguments that passed to web service itself.
+
+=item responseData
+
+	TODO
+
+=item responseDetails
+
+	TODO
+
+=item responseStatus
+
+	TODO
+
+=back
+
+=head1 CLASSES
+
+=over
+
+=item L<Search::Google::Web>
+
+=item L<Search::Google::Blogs>
+
+=item L<Search::Google::Books>
+
+=item L<Search::Google::Images>
+
+=item L<Search::Google::Local>
+
+=item L<Search::Google::Video>
+
+=item L<Search::Google::News>
+
+=back
+
+=head1 WARNING
+
+This is alpha software. If you like this module, please provide us with
+failing tests and API suggestions.
+
+=head1 DEPENDENCIES
+
+	TODO
+
+=head1 SEE ALSO
+
+L<http://code.google.com/p/search-google/> - this project on Google code;
+
+L<http://code.google.com/apis/ajaxsearch/documentation/#fonje> - information about
+Google AJAX API in non-Javascript environments;
+
+L<http://code.google.com/apis/ajaxsearch/documentation/reference.html#_intro_fonje> - detailed specification
+for Google AJAX Search API.
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2008, Eugen Sobchenko <ejs@cpan.org> and Sergey Sinkovskiy <glorybox@cpan.org>
+
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.

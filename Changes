@@ -1,4 +1,9 @@
 Revision history of Search::Google
 
+1.0.1   Fri Apr 25 15:51:41 UTC 2008
+    - minor Build.PL fixes;
+    - POD is now stored separately from modules;
+    - minor bugfixes in Google.pm;
+
 1.0.0   Thu Apr 24 20:11:59 UTC 2008
-    - initial release
+    - initial release;

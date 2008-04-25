@@ -5,9 +5,9 @@ WriteMakefile
           'NAME' => 'Search::Google',
           'VERSION_FROM' => 'lib/Search/Google.pm',
           'PREREQ_PM' => {
+                           'Class::Data::Inheritable' => '0.06',
                            'JSON::Any' => '1.16',
                            'LWP::UserAgent' => '2.033',
-                           'Scalar::Util' => '1.14',
                            'Test::More' => '0.47',
                            'URI' => '1.35',
                            'version' => '0.50'

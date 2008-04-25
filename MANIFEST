@@ -1,13 +1,21 @@
 Build.PL
 Changes
 lib/Search/Google.pm
+lib/Search/Google.pod
 lib/Search/Google/Blogs.pm
+lib/Search/Google/Blogs.pod
 lib/Search/Google/Books.pm
+lib/Search/Google/Books.pod
 lib/Search/Google/Images.pm
+lib/Search/Google/Images.pod
 lib/Search/Google/Local.pm
+lib/Search/Google/Local.pod
 lib/Search/Google/News.pm
+lib/Search/Google/News.pod
 lib/Search/Google/Video.pm
+lib/Search/Google/Video.pod
 lib/Search/Google/Web.pm
+lib/Search/Google/Web.pod
 MANIFEST			This list of files
 README
 t/01_basic.t

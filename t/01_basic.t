@@ -17,9 +17,9 @@ my $search = Search::Google->new(
 
 isa_ok( $search, 'Search::Google', "search object" );
 
-ok(defined $search->status, "search status");
+ok(defined $search->responseStatus, "search status");
 
-my $data = $search->data; 
+my $data = $search->responseData; 
 
 isa_ok( $data, 'Search::Google::Data', "data object" );
 

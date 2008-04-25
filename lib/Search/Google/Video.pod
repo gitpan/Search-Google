@@ -1,0 +1,25 @@
+=head1 NAME
+
+Search::Google::Video - search Google Video
+
+=head1 SYNOPSIS
+
+	use Search::Google::Video;
+
+=head1 DESCRIPTION
+
+	TODO
+
+=head1 METHODS
+
+	TODO
+
+=head1 SEE ALSO
+
+L<Search::Google>
+
+=head1 LICENSE AND COPYRIGHT
+
+Copyright 2008, Eugen Sobchenko <ejs@cpan.org> and Sergey Sinkovskiy <glorybox@cpan.org>
+
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
