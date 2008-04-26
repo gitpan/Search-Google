@@ -1,5 +1,6 @@
 Build.PL
 Changes
+lib/1.pl
 lib/Search/Google.pm
 lib/Search/Google.pod
 lib/Search/Google/Blogs.pm
@@ -27,5 +28,4 @@ t/06_news.t
 t/07_books.t
 t/08_images.t
 t/09_pod.t
-Makefile.PL
 META.yml

@@ -4,7 +4,7 @@ Search::Google - search Google using the REST (aka AJAX) API
 
 =head1 VERSION
 
-This documentation refers to Search::Google version 1.0.1
+This documentation refers to Search::Google version 1.0.2
 
 =head1 SYNOPSIS
 
@@ -38,34 +38,89 @@ This documentation refers to Search::Google version 1.0.1
 
 =head1 DESCRIPTION
 
-C<Search::Google> is a set of classes that use Google REST (aka AJAX)
-API for searching and provide OO interface to Google's response objects.
-
-	TODO
+C<Search::Google> is a set of modules that use Google REST (aka AJAX)
+API for searching and provide OO interface to Google response objects.
+C<Search::Google> itself is a base class for all these modules and
+usually not meant to be used separately.
 
 =head1 METHODS
 
 =over
 
+=item service_uri
+
+A class method to set service URI. Each module (from C<Search::Google::*>)
+use it's own predefined HTTP URI, so you don't have to change it normally.
+
+=item http_referer
+
+A class method that sets C<Referer> header to use for next searches.
+
+	Search::Google::Images->http_referer('http://example.org/search.html');
+
+Default is 'http://example.com'.
+
+I<Note:> Google says that you should supply a valid HTTP referer header
+each time you perform the search request using their AJAX API.
+
 =item new
 
-	Constructor arguments are same as URL arguments that passed to web service itself.
+The constructor use it's arguments to build a valid HTTP GET request using
+the C<service_uri>, so it takes the same arguments as the relevant web service takes.
+Please refer to 'Google AJAX Search API' documentation for complete list
+of arguments. Example:
 
-=item responseData
+	my $res = Search::Google::Web->new(
+		q => 'Pamela Anderson',
+		start => 4,
+		hl => 'fr',
+	);
 
-	TODO
+The code above will perform the HTTP GET request using the following URL:
 
-=item responseDetails
+	http://ajax.googleapis.com/ajax/services/search/web?hl=fr&q=Pamela+Anderson&v=1.0&start=4
 
-	TODO
+The C<$res> is a C<Search::Google::Web> object that represents Google Web Search
+response format.
+
+I<Note:> You can left protocol version number unspecified while making your searches since
+C<v=1.0> is passed by default.
+
+C<Search::Google::*> objects completely represent Google AJAX API search responses
+and have the following structure:
+
+	{
+		"responseData" => {
+			"results" => [],
+			"cursor" => {}
+		},
+		"responseDetails" => undef | string-on-error,
+		"responseStatus" => 200 | error-code
+	}
 
 =item responseStatus
 
-	TODO
+The responseStatus property contains a value of 200 on success and a non-200
+HTTP error status code on failure. If there is a failure, C<responseDetails> contains
+a diagnostic string.
+
+=item responseDetails
+
+Contain an error string if C<responseStatus> is not 200.
+
+=item responseData
+
+Returns an object that provides OO access to Google C<responseData> structure.
+This object has actually two methods: a C<results> that returns
+the array of result object for the given search type and C<cursor>
+method that return cursor object object (if exists).
+
+Please refer to 'Google AJAX Search API' documentation for response structure
+details of exact services for exact search types.
 
 =back
 
-=head1 CLASSES
+=head1 AVAILABLE CLASSES
 
 =over
 
@@ -92,7 +147,7 @@ failing tests and API suggestions.
 
 =head1 DEPENDENCIES
 
-	TODO
+C<Search::Google> uses C<JSON::Any> for decoding Google AJAX Search API response and C<LWP> for search request sending.
 
 =head1 SEE ALSO
 

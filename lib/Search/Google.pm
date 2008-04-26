@@ -6,7 +6,7 @@ package Search::Google;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.1');
+use version; our $VERSION = qv('1.0.2');
 
 use Carp qw/carp croak/;
 
@@ -21,7 +21,7 @@ use URI;
 
 use base qw/Class::Data::Inheritable Class::Accessor/;
 
-__PACKAGE__->mk_classdata("http_referer");
+__PACKAGE__->mk_classdata("http_referer" => 'http://example.com');
 __PACKAGE__->mk_classdata("service_uri" => 'http://ajax.googleapis.com/ajax/services/search/web');
 
 __PACKAGE__->mk_accessors(qw/responseDetails responseStatus/);
@@ -54,8 +54,6 @@ sub _get_args {
 
 sub new {
 	my $class = shift;
-	croak "you need to specify a valid http referer according to Google AJAX Search API terms of use"
-		unless $class->http_referer; 
 
 	my $args = $class->_get_args(@_);
 
@@ -67,11 +65,12 @@ sub new {
 	my $ua = LWP::UserAgent->new();
 	my $response = $ua->request( $request );
 
-	die $response->status_line unless $response->is_success;
+	croak sprintf qq/HTTP request failed: %s/, $response->status_line
+		unless $response->is_success;
 
 	my $content = $response->content;
+
 	my $json = JSON::Any->new();
-	
 	my $self = $json->decode($content);
 
 	return bless $self, $class;
@@ -82,7 +81,8 @@ sub responseData {
 	return bless $self->{responseData}, 'Search::Google::Data';
 }
 
-package Search::Google::Data;
+package # hide from CPAN
+	Search::Google::Data;
 
 sub results {
 	my $self = shift;
@@ -94,7 +94,8 @@ sub cursor {
 	return bless $self->{cursor}, 'Search::Google::Cursor';
 } 
 
-package Search::Google::Cursor;
+package # hide from CPAN
+	Search::Google::Cursor;
 
 use base qw/Class::Accessor/;
 
