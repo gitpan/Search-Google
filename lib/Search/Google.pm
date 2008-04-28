@@ -6,7 +6,7 @@ package Search::Google;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('1.0.3');
+use version; our $VERSION = qv('1.0.4');
 
 use Carp qw/carp croak/;
 
@@ -80,6 +80,8 @@ sub new {
 	my $request = HTTP::Request->new( GET => $uri, [ 'Referer', $class->http_referer ] );
 
 	my $ua = LWP::UserAgent->new();
+	$ua->env_proxy;
+
 	my $response = $ua->request( $request );
 
 	croak sprintf qq/HTTP request failed: %s/, $response->status_line

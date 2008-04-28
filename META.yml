@@ -1,6 +1,6 @@
 ---
 name: Search-Google
-version: 1.0.3
+version: 1.0.4
 author:
   - 'Eugen Sobchenko <ejs@cpan.org>'
 abstract: search Google using the REST (aka AJAX) API
@@ -18,7 +18,7 @@ requires:
 provides:
   Search::Google:
     file: lib/Search/Google.pm
-    version: 1.0.3
+    version: 1.0.4
   Search::Google::Blogs:
     file: lib/Search/Google/Blogs.pm
   Search::Google::Books:

@@ -4,7 +4,7 @@ Search::Google - search Google using the REST (aka AJAX) API
 
 =head1 VERSION
 
-This documentation refers to Search::Google version 1.0.3
+This documentation refers to Search::Google version 1.0.4
 
 =head1 SYNOPSIS
 

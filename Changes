@@ -1,5 +1,8 @@
 Revision history of Search::Google
 
+1.0.4   Mon Apr 28 19:05:37 EEST 2008
+    - HTTP_PROXY environment support added. Thanks to Otmar Lendl.
+
 1.0.3   Mon Apr 28 17:46:17 EEST 2008
     - Google search result classes are moved to Google.pm;
     - service constants added to Google.pm;
