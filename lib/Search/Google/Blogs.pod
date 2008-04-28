@@ -6,14 +6,6 @@ Search::Google::Blogs - search Google Blogs
 
 	use Search::Google::Blogs;
 
-=head1 DESCRIPTION
-
-	TODO
-
-=head1 METHODS
-
-	TODO
-
 =head1 SEE ALSO
 
 L<Search::Google>

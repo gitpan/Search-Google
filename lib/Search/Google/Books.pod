@@ -6,14 +6,6 @@ Search::Google::Books - search Google Books
 
 	use Search::Google::Books;
 
-=head1 DESCRIPTION
-
-	TODO
-
-=head1 METHODS
-
-	TODO
-
 =head1 SEE ALSO
 
 L<Search::Google>

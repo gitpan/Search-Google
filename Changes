@@ -1,4 +1,10 @@
 Revision history of Search::Google
+
+1.0.3   Mon Apr 28 17:46:17 EEST 2008
+    - Google search result classes are moved to Google.pm;
+    - service constants added to Google.pm;
+    - POD is updated;
+
 1.0.2   Sat Apr 26 17:09:23 UTC 2008
     - POD is slightly updated;
     - default http_referer() value added;

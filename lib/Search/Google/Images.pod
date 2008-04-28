@@ -6,14 +6,6 @@ Search::Google::Images - search Google Images
 
 	use Search::Google::Images;
 
-=head1 DESCRIPTION
-
-	TODO
-
-=head1 METHODS
-
-	TODO
-
 =head1 SEE ALSO
 
 L<Search::Google>

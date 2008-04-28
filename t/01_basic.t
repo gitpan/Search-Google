@@ -10,10 +10,7 @@ BEGIN { use_ok( "Search::Google" ); }
 # referer test
 Search::Google->http_referer('http://www.cpan.org');
 
-my $search = Search::Google->new(
-	v => '1.0',
-	q => 'Jimi Hendrix',
-);
+my $search = Search::Google->new('Jimi Hendrix');
 
 isa_ok( $search, 'Search::Google', "search object" );
 

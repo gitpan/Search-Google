@@ -6,14 +6,6 @@ Search::Google::Web - search Google Web
 
 	use Search::Google::Web;
 
-=head1 DESCRIPTION
-
-	TODO
-
-=head1 METHODS
-
-	TODO
-
 =head1 SEE ALSO
 
 L<Search::Google>

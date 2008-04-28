@@ -6,14 +6,6 @@ Search::Google::Video - search Google Video
 
 	use Search::Google::Video;
 
-=head1 DESCRIPTION
-
-	TODO
-
-=head1 METHODS
-
-	TODO
-
 =head1 SEE ALSO
 
 L<Search::Google>

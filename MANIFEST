@@ -1,6 +1,5 @@
 Build.PL
 Changes
-lib/1.pl
 lib/Search/Google.pm
 lib/Search/Google.pod
 lib/Search/Google/Blogs.pm
