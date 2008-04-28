@@ -1,6 +1,6 @@
 ---
 name: Search-Google
-version: 1.0.4
+version: 1.0.5
 author:
   - 'Eugen Sobchenko <ejs@cpan.org>'
 abstract: search Google using the REST (aka AJAX) API
@@ -18,21 +18,28 @@ requires:
 provides:
   Search::Google:
     file: lib/Search/Google.pm
-    version: 1.0.4
+    version: 1.0.5
   Search::Google::Blogs:
     file: lib/Search/Google/Blogs.pm
+    version: 1.0.5
   Search::Google::Books:
     file: lib/Search/Google/Books.pm
+    version: 1.0.5
   Search::Google::Images:
     file: lib/Search/Google/Images.pm
+    version: 1.0.5
   Search::Google::Local:
     file: lib/Search/Google/Local.pm
+    version: 1.0.5
   Search::Google::News:
     file: lib/Search/Google/News.pm
+    version: 1.0.5
   Search::Google::Video:
     file: lib/Search/Google/Video.pm
+    version: 1.0.5
   Search::Google::Web:
     file: lib/Search/Google/Web.pm
+    version: 1.0.5
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
